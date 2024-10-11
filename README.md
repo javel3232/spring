@@ -134,5 +134,28 @@ public class Order {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+
+
+
+
+
+
+
+@GetMapping("/orders")
+public String showOrders(Model model) {
+    List<Order> orders = Arrays.asList(
+        new Order("0504801", 1, "14961", "PA PREVENTA HABITAT 103", "Octubre", "Quality", "Alistado", "ACH", "10/10/2024", "LACAGUTI"),
+        new Order("0504802", 5, "7102", "LA PINTADA", "Octubre", "Synergy", "Nivel I", "ACB", "10/10/2024", "LACAGUTI"),
+        // Add more orders here...
+    );
+    
+    model.addAttribute("orders", orders);
+    return "orders";
+}
+
+
+
+
+    
 </body>
 </html>
